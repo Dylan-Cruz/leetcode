@@ -5,7 +5,7 @@ class Solution1:
         # check if strings are different lengths
         if len(s) != len(t):
             return False
-        
+
         # use hash map to store a record of the letters in a word
         # iterate over the candidate word pulling letters out
         # if any keys in the map are still present, return false
@@ -31,9 +31,11 @@ class Solution1:
         if len(letters.keys()) == 0:
             return True
 
+
 solution1 = Solution1()
 print(solution1.isAnagram("anagram", "nagaram"))
 print(solution1.isAnagram("rat", "car"))
+
 
 class Solution2:
     # runtime beats 83% of users
@@ -42,23 +44,24 @@ class Solution2:
         # check if strings are different lengths
         if len(s) != len(t):
             return False
-        
+
         # make a list 26 elements long initialized to 0
         letters = [0] * 26
-        
+
         for i in range(len(s)):
             # for each letter in each string increment or decrement
-            # the associated index of the array. values are stored 
+            # the associated index of the array. values are stored
             # in the index equal to their distance from 'a'
-            letters[ord(s[i]) - ord('a')] += 1
-            letters[ord(t[i]) - ord('a')] -= 1
-        
+            letters[ord(s[i]) - ord("a")] += 1
+            letters[ord(t[i]) - ord("a")] -= 1
+
         # check if any array index is less than 0
         for count in letters:
             if count < 0:
                 return False
-            
+
         return True
+
 
 solution2 = Solution2()
 print(solution2.isAnagram("anagram", "nagaram"))
@@ -66,11 +69,14 @@ print(solution2.isAnagram("rat", "car"))
 
 
 from collections import Counter
+
+
 class Solution3:
     # runtime beats 95% of users
     # memory beats 79% of users
     def isAnagram(self, s: str, t: str) -> bool:
         return Counter(s) == Counter(t)
+
 
 solution3 = Solution3()
 print(solution3.isAnagram("anagram", "nagaram"))
