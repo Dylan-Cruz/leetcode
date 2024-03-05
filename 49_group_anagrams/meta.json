@@ -1,0 +1,12 @@
+{
+    "name": "Group Anagrams",
+    "number": 49,
+    "url": "https://leetcode.com/problems/group-anagrams/description/",
+    "difficulty": "Medium",
+    "topics": [
+        "Array",
+        "Hash Table",
+        "String",
+        "Sorting"
+    ]
+}

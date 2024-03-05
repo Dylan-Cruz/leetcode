@@ -1,0 +1,10 @@
+{
+    "name": "Two Sum",
+    "number": 1,
+    "url": "https://leetcode.com/problems/two-sum/description/",
+    "difficulty": "Easy",
+    "topics": [
+        "Array",
+        "Hash Table"
+    ]
+}

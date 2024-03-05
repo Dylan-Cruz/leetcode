@@ -25,9 +25,9 @@ class Solution:
             l2_val = l2.val if l2 else 0
 
             # do the math
-            sum = l1_val + l2_val + carry_over
-            digit = sum % 10
-            carry_over = sum // 10
+            total = l1_val + l2_val + carry_over
+            digit = total % 10
+            carry_over = total // 10
 
             # append the digit
             new_node = ListNode(digit)

@@ -1,0 +1,11 @@
+{
+    "name": "Contains Duplicate",
+    "number": 217,
+    "url": "https://leetcode.com/problems/contains-duplicate/description/",
+    "difficulty": "Easy",
+    "topics": [
+        "Array",
+        "Hash Table",
+        "Sorting"
+    ]
+}
