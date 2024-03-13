@@ -9,23 +9,22 @@ class Solution:
         for num in nums:
             frequency_map[num] = frequency_map[num] + 1
 
-        # stream the key pairs into a list of tuples
-        tuples = list(frequency_map.items())
+        # make a list of buckets and add the frequencies to their respective position
+        buckets = [[] for _ in range(len(nums) + 1)]
+        for c, v in frequency_map.items():
+            buckets[v].append(c)
 
-        # sort the list and return the top k entries
-        tuples.sort(key=lambda tup: tup[1], reverse=True)
-        return [tup[0] for tup in tuples[:k]]
+        # build our return value
+        ret = []
+        for bucket in reversed(buckets):
+            for freq in bucket:
+                if len(ret) < k:
+                    ret.append(freq)
+
+                if len(ret) == k:
+                    return ret
 
 
 solution = Solution()
-input = [1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3]
-print(solution.topKFrequent(input, 2))
-
-
-# efficiency
-# 2N * NlogN + k
-# O(N^2 logN)
-
-# memory
-# 2N
-# O(N)
+data = [1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3]
+print(solution.topKFrequent(data, 2))
