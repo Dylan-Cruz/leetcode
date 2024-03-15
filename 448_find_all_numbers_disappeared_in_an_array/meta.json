@@ -1,0 +1,13 @@
+{
+    "name": "Find All Numbers Disappeared in an Array",
+    "number": "448",
+    "url": "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/",
+    "difficulty": "Easy",
+    "topics": [
+        "Array",
+        "Hash Table"
+    ],
+    "description_html": "<p>Given an array <code>nums</code> of <code>n</code> integers where <code>nums[i]</code> is in the range <code>[1, n]</code>, return <em>an array of all the integers in the range</em> <code>[1, n]</code> <em>that do not appear in</em> <code>nums</code>.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n<pre><strong>Input:</strong> nums = [4,3,2,7,8,2,3,1]\n<strong>Output:</strong> [5,6]\n</pre><p><strong class=\"example\">Example 2:</strong></p>\n<pre><strong>Input:</strong> nums = [1,1]\n<strong>Output:</strong> [2]\n</pre>\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>n == nums.length</code></li>\n\t<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= nums[i] &lt;= n</code></li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Follow up:</strong> Could you do it without extra space and in <code>O(n)</code> runtime? You may assume the returned list does not count as extra space.</p>\n",
+    "description_markdown": "Given an array `nums` of `n` integers where `nums[i]` is in the range `[1, n]`, return *an array of all the integers in the range* `[1, n]` *that do not appear in* `nums`.\n\n\n\u00a0\n\n\n**Example 1:**\n\n\n\n```\n**Input:** nums = [4,3,2,7,8,2,3,1]\n**Output:** [5,6]\n\n```\n**Example 2:**\n\n\n\n```\n**Input:** nums = [1,1]\n**Output:** [2]\n\n```\n\n\u00a0\n\n\n**Constraints:**\n\n\n* `n == nums.length`\n* `1 <= n <= 105`\n* `1 <= nums[i] <= n`\n\n\n\u00a0\n\n\n**Follow up:** Could you do it without extra space and in `O(n)` runtime? You may assume the returned list does not count as extra space.\n\n\n",
+    "solution_stub": "class Solution:\n    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:\n        "
+}
