@@ -13,7 +13,7 @@ class Solution:
         queue = deque()
 
         for char in s:
-            if char in terminating_map.keys:
+            if char in terminating_map.keys():
                 # if the top_val is the expected opening paren
                 # pop it off the queue
                 top_val = deque[0]
@@ -23,7 +23,7 @@ class Solution:
                     # an invalid opening parentheses 
                     return False
             else:
-                queue.append(char)
+                queue.appendleft(char)
         
         if not queue:
             # if queue isn't empty
@@ -31,3 +31,8 @@ class Solution:
 
         return True
         
+
+solution = Solution()
+print(solution.isValid("()"))
+print(solution.isValid("()[]{}"))
+print(solution.isValid("(]"))
