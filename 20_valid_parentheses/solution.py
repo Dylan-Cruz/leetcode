@@ -5,34 +5,34 @@ class Solution:
     def isValid(self, s: str) -> bool:
 
         # if there are an uneven number of characters, return false
-        if len(s) % 2 != 0:
+        if len(s) % 2 != 0 or not s:
             return False
 
-        terminating_map = {')': '(', ']': '[', '}': '{'}
-        
-        queue = deque()
+        terminating_map = {")": "(", "]": "[", "}": "{"}
+        stack = deque()
 
         for char in s:
             if char in terminating_map.keys():
-                # if the top_val is the expected opening paren
-                # pop it off the queue
-                top_val = deque[0]
-                if terminating_map[char] == top_val:
-                    deque.popleft()
-                else: 
-                    # an invalid opening parentheses 
+                # char is a closing parentheses, check for associated opening paren
+                if stack:
+                    top_val = stack[0]
+                    if terminating_map[char] == top_val:
+                        stack.popleft()
+                    else:
+                        # incorrect opening parentheses
+                        return False
+                else:
+                    # expected an opening parentheses but the stack was empty
                     return False
             else:
-                queue.appendleft(char)
-        
-        if not queue:
-            # if queue isn't empty
-            return False
+                # char is an opening parentheses
+                stack.appendleft(char)
 
-        return True
-        
+        return len(stack) == 0
+
 
 solution = Solution()
 print(solution.isValid("()"))
 print(solution.isValid("()[]{}"))
 print(solution.isValid("(]"))
+print(solution.isValid("}["))
