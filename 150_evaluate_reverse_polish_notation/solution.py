@@ -4,17 +4,6 @@ from typing import List
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
 
-        # for token in tokens
-        # if operand
-        # push to stack
-        # else
-        # pop two values off stack
-        # apply the operator
-        # if operation is division use floor division
-        # push the result onto the stack
-        # in a valid mathmetical expression, there should be a single value left on the stack
-        # this should be the answer. pop and return it.
-
         operator_set = set(["+", "-", "*", "/"])
         operand_stack = []
         for token in tokens:

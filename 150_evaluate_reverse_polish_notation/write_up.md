@@ -3,16 +3,18 @@
 ## Intuition
 This problem can be solved pretty easily with a stack at first glance. The workflow is as follows:
 ```
-    for each token in tokens
-        if operand
-            push to stack
-        else
-            pop two values off stack
-            perform operation
-            push result
-        
-    if rpn list was valid, stack will contain one element, the result
+for each token in tokens
+    if operand
+        push to stack
+    else
+        pop two values off stack
+        perform operation
+        push result
+    
+if rpn list was valid, stack will contain one element, the result
 ```
+
+A few additional points worth mentioning, the order of the operands that get popped matters in terms of division and subtraction. The second value you pop is the leading term in the next operation. It behooves you to parse the tokens to ints as you push operands to the stack so everything is an integer. 
 
 ## Approach
 This ended up being the valid approach and while I was confident in my code on first write, there were several gotchas I hadn't accounted for. Here's a list of things I learned or learned that I need to think about:
