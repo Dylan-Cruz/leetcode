@@ -24,5 +24,8 @@ class Solution:
         backtrack(0,0)
         return res
     
+    def generateAllPossibilities(self, n: int) -> List[str]:
+        pass
+    
 solution = Solution()
 print(solution.generateParenthesis(3))
