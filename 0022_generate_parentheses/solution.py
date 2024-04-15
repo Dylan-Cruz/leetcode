@@ -25,7 +25,21 @@ class Solution:
         return res
     
     def generateAllPossibilities(self, n: int) -> List[str]:
-        pass
+        stack = []
+        res = []
+        runs = 0
+
+        def backtrack(): 
+            if run
+
+            stack.append("(")
+            backtrack()
+            stack.pop()
+             
+            stack.append(")")
+            backtrack()
+            stack.pop()
     
 solution = Solution()
 print(solution.generateParenthesis(3))
+
