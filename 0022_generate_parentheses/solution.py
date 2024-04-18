@@ -27,10 +27,10 @@ class Solution:
     def generateAllPossibilities(self, n: int) -> List[str]:
         stack = []
         res = []
-        runs = 0
-
         def backtrack(): 
-            if run
+            if len(stack) == 2*n:
+                res.append(''.join(stack))
+                return
 
             stack.append("(")
             backtrack()
@@ -39,7 +39,11 @@ class Solution:
             stack.append(")")
             backtrack()
             stack.pop()
+
+        backtrack()
+        return res
     
 solution = Solution()
-print(solution.generateParenthesis(3))
+# print(solution.generateParenthesis(3))
 
+print(solution.generateAllPossibilities(2))
