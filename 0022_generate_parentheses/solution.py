@@ -2,6 +2,26 @@ from typing import List
 
 
 class Solution:
+
+    def generateAllPossibilities(self, n: int) -> List[str]:
+        stack = []
+        res = []
+        def backtrack(): 
+            if len(stack) == 2*n:
+                res.append(''.join(stack))
+                return
+
+            stack.append("(")
+            backtrack()
+            stack.pop()
+             
+            stack.append(")")
+            backtrack()
+            stack.pop()
+
+        backtrack()
+        return res
+
     def generateParenthesis(self, n: int) -> List[str]:
         stack = []
         res = []
@@ -24,26 +44,5 @@ class Solution:
         backtrack(0,0)
         return res
     
-    def generateAllPossibilities(self, n: int) -> List[str]:
-        stack = []
-        res = []
-        def backtrack(): 
-            if len(stack) == 2*n:
-                res.append(''.join(stack))
-                return
-
-            stack.append("(")
-            backtrack()
-            stack.pop()
-             
-            stack.append(")")
-            backtrack()
-            stack.pop()
-
-        backtrack()
-        return res
-    
 solution = Solution()
-# print(solution.generateParenthesis(3))
-
-print(solution.generateAllPossibilities(2))
+print(solution.generateParenthesis(3))
