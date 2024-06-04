@@ -2,17 +2,15 @@ from typing import List
 
 class Solution:
     def construct2DArray(self, original: List[int], m: int, n: int) -> List[List[int]]:
-        if m*n != len(original):
-            return []
-        
         rows = []
-        col = []
-        rowNum = 0
-        for value in original:
-            col.append(value)
-            if len(col) == n:
-                rows.append(col)
-                col = []
+
+        if (len(original) == m*n):
+            col = []
+            for value in original:
+                col.append(value)
+                if len(col) == n:
+                    rows.append(col)
+                    col = []
 
         return rows
     
